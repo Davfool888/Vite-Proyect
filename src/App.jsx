@@ -19,8 +19,9 @@ function createTask(task){
     }])
   }
 
-function deleteTask(tasks){
+function deleteTask(taskId){
   console.log(tasks)
+  console.log(object)
 }
 
 
