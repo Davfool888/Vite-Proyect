@@ -1,14 +1,11 @@
-export function TaskCard({task}) {
+export function TaskCard({task, deleteTask}) {
 
 
-  function mostrarAlerta(){
-    alert(task.id)
-  }
   return (
     <div>
       <h1>{task.title}</h1>
       <p>{task.description}</p>
-      <button onClick={mostrarAlerta}>
+      <button onClick={deleteTask}>
         Eliminar tarea
       </button>
     </div>

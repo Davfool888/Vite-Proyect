@@ -19,11 +19,15 @@ function createTask(task){
     }])
   }
 
+function deleteTask(tasks){
+  console.log(tasks)
+}
+
 
   return (
     <>
-      <TaskForm createTask={createTask} />
-      <TaskList tasks = {tasks}/>
+      <TaskForm createTask={createTask}  />
+      <TaskList tasks = {tasks} deleteTask={deleteTask}/>
 
     </>
   );
