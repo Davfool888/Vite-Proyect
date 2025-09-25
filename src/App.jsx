@@ -20,8 +20,7 @@ function createTask(task){
   }
 
 function deleteTask(taskId){
-  console.log(tasks)
-  console.log(object)
+  setTasks(tasks.filter(task => task.id !== taskId))
 }
 
 
