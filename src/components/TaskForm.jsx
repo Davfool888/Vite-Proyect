@@ -1,44 +1,39 @@
-import { useState, useContext} from "react"
-import { TaskContext } from "./context/taskContext"
+import { useState, useContext } from "react";
+import { TaskContext } from "./context/taskContext";
 
-function TaskForm({createTask}) {
-    const [title, setTitle] = useState('')
-     const [description, setDescription] = useState('')
+function TaskForm() {
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const {createTask} = useContext(TaskContext);
 
- const valor =  useContext(TaskContext)
-console.log(valor)
 
-const handleSumit = (e) =>{
+  const handleSumit = (e) => {
     e.preventDefault();
-    console.log(title, description)
     createTask({
-      title, 
-      description
-    })
+      title,
+      description,
+    });
 
-    setTitle('')
-    setDescription('')
-}    
+    setTitle("");
+    setDescription("");
+  };
 
-
-    
   return (
-      <form onSubmit={handleSumit}>
-        <input placeholder="Escribe tu Tarea "
+    <form onSubmit={handleSumit}>
+      <input
+        placeholder="Escribe tu Tarea "
         onChange={(e) => setTitle(e.target.value)}
         value={title}
         autoFocus
-        />
-        <textarea placeholder="Escribe descripcion de la tarea"
+      />
+      <textarea
+        placeholder="Escribe descripcion de la tarea"
         onChange={(e) => setDescription(e.target.value)}
         value={description}
-        ></textarea>
-        <button>
-            Guardar
-        </button>
-      </form>
-    
-  )
+      ></textarea>
+      <button>Guardar</button>
+    </form>
+  );
 }
 
-export default TaskForm
+export default TaskForm;
