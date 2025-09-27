@@ -1,9 +1,11 @@
+import { useContext } from "react";
+import { TaskContext } from "./context/taskContext";
 
 
 
 function TaskCard({task, deleteTask}) {
-  return (
 
+  return (
       <div>
       <h1>{task.title}</h1>
       <p>{task.description}</p>
